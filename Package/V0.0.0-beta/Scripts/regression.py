@@ -215,14 +215,15 @@ The **Error Rating** for the algorithms is not in a specified unit, scale varies
         table_place.table(pd.DataFrame(errors, index=models, columns=['Error Rating']))
         stat_contain = stats.beta_container()
         
-        if 'Mean' in preds.columns: preds.pop('Mean')
-        if 'Recommended' in preds.columns: preds.pop('Recommended')
-        
         graphs.write('### Recommended Model')
         graphs.line_chart(preds.iloc(axis=1)['Recommended'], height=400)
         
         graphs.write('### All Models')
         graphs.line_chart(preds, height=400)
+        
+        
+        if 'Mean' in preds.columns: preds.pop('Mean')
+        if 'Recommended' in preds.columns: preds.pop('Recommended')
         
         preds.insert(0, 'Recommended', value=preds.iloc(axis=1)[lowest_index])
         preds.insert(0, 'Mean', value=preds.mean(axis=1))

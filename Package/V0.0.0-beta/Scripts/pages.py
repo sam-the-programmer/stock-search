@@ -21,7 +21,7 @@ class MultiPage(object):
             'App Navigation',
             self.pages,
             format_func = lambda page: page['title'],
-            index = 1
+            index = 0
         )
 
         page['function']()
@@ -87,7 +87,12 @@ def welcome():
     # if not st.checkbox('Show Welcome Screen on Startup', value=True):
     #     setting_info.set_welcome_screen(False)
 
-    st.markdown('''Welcome! Stock Search is the latest, innovative way to explore stocks and prices
+    st.markdown(f'''
+###### **NOTE:** By using this application, you are agreeing to the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a>
+
+<br/>
+
+Welcome! Stock Search is the latest, innovative way to explore stocks and prices
 throughout time, back into the past and into the future. By using detailed
 machine learning models and deep neural networks, Stock Search's free AI
 tools will outline estimates for rates in the future.
@@ -146,15 +151,42 @@ def all_data():
 def exchange_rates_data():
     title_func('Exchange Rates Data')
 
-    data_name = st.selectbox(
-        'Choose Dataset', [key for key in data.exchange_rates])
+    left_col, right_col = st.beta_columns([1, 1])
+
+    data_name = left_col.selectbox('Choose Dataset', [
+                                   key for key in data.exchange_rates], help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.')
 
     data_data = data.get_data('Exchange Rates: ' + data_name)
 
-    data_type = st.selectbox('Data Type', list(
+    data_type = right_col.selectbox('Data Type', list(
         data_data), help='Choose which column of data to display. E.g. "Value", "High" or "Low"')
 
+    st.markdown('<br/><br/>', unsafe_allow_html=True)
+
     st.area_chart(data_data[data_type])
+
+    algo.get_preds_wrapper(data_data, data_type)
+
+    footer()
+    
+def crypto_data():
+    title_func('Cryptocurrency Data')
+
+    left_col, right_col = st.beta_columns([1, 1])
+
+    data_name = left_col.selectbox('Choose Dataset', [
+                                   key for key in data.cryptos], help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.')
+
+    data_data = data.get_data('Cryptocurrencies: ' + data_name)
+
+    data_type = right_col.selectbox('Data Type', list(
+        data_data), help='Choose which column of data to display. E.g. "Value", "High" or "Low"')
+
+    st.markdown('<br/><br/>', unsafe_allow_html=True)
+
+    st.area_chart(data_data[data_type])
+
+    algo.get_preds_wrapper(data_data, data_type)
 
     footer()
 
