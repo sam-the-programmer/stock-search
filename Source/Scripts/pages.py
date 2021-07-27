@@ -60,6 +60,8 @@ footer :after {
 
 > ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
 
+###### Check out the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a> on the Github repository for more information.
+
 ###### Thanks to Numpy, Pandas, Quandl, Streamlit and Python.
 ''', unsafe_allow_html=True)
 

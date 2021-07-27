@@ -1,4 +1,4 @@
-from cx_Freeze import setup, Executable
+'''from cx_Freeze import setup, Executable
 
 executables = [
     Executable('main.py')
@@ -16,4 +16,12 @@ setup(
         'build_exe': {'packages':packages,'include_files':includefiles},
         'bdist_msi': {'initial_target_dir': r'[ProgramFilesFolder]\%s' % ('Stock Search')}
     }
+)'''
+
+from setuptools import setup
+from Cython.Build import cythonize
+
+setup(
+    ext_modules = cythonize("main.py"),
+    compiler_directives={'language_level' : "3"}
 )

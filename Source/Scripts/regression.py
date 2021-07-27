@@ -139,7 +139,8 @@ def get_best_preds(raw, column, days):
     for i in range(len(preds)):
         prediction_frame[models[i]] = preds[i]
     
-    return prediction_frame, errors
+    return prediction_frame, errors, X_train
+    
 
 
 def get_preds_wrapper(data, column):
@@ -183,7 +184,8 @@ border-radius:10px 10px 10px 10px;
     
     if right_col.button('Get Predictions'):
         space.info('Training models - please wait, this could take some time...')
-        preds, errors = get_best_preds(data, column, num_days)
+        preds, errors, tail = get_best_preds(data, column, num_days)
+        st.write(tail)
     
     
     right_col.write('''
@@ -209,21 +211,23 @@ The **Error Rating** for the algorithms is not in a specified unit, scale varies
                 lowest_index = i
         
         graphs = space.beta_container()
-        graphs.write('### Recommended Model')
-        graphs.line_chart(preds.iloc(axis=1)[lowest_index], height=400)
-        
-        graphs.write('### All Models')
-        graphs.line_chart(preds, height=400)
         
         table_place.table(pd.DataFrame(errors, index=models, columns=['Error Rating']))
         stat_contain = stats.beta_container()
         
         if 'Mean' in preds.columns: preds.pop('Mean')
         if 'Recommended' in preds.columns: preds.pop('Recommended')
-        preds.insert(0, 'Mean', value=preds.mean(axis=1))
-        preds.insert(0, 'Recommended', value=preds.iloc(axis=1)[lowest_index])
-        raw_data_display.write(preds)
         
+        graphs.write('### Recommended Model')
+        graphs.line_chart(preds.iloc(axis=1)['Recommended'], height=400)
+        
+        graphs.write('### All Models')
+        graphs.line_chart(preds, height=400)
+        
+        preds.insert(0, 'Recommended', value=preds.iloc(axis=1)[lowest_index])
+        preds.insert(0, 'Mean', value=preds.mean(axis=1))
+        raw_data_display.write(preds)
+        stat_contain.write(tail)
         stat_contain.write('Below is a bar chart of the model performance. Lower values means less error and higher accuracy, so look for the algorithms with the lowest values.')
         performance_chart = stat_contain.bar_chart(pd.DataFrame(errors, index=models), height=400)
         
