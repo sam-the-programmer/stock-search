@@ -8,13 +8,14 @@
 
   <p align="center">
     This is not financial advice. Do not use this for real-world circumstances. This is simply a visualization of a data science project.
-    By using this software, you are agreeing to the license, which can be found in the distributed package or at the [Github repository](https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE)
+    By using this software, you are agreeing to the license, which can be found in the distributed package or at the
+    <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>Github repository</a>.
     <br/>
     <br/>
     Stock Search is the new innovative way to check and view stocks through
     time, back through the past and into the future. By using varied and
     dynamic machine learning algorithms, future prices can be predicted.
-    Thank you to [Yahho! Finance](https://www.yahoo.finance.com) for the data.
+    Thank you to <a href='https://finance.yahoo.com/'>Yahoo! Finance</a> for the data.
   </p>
 </p>
 
