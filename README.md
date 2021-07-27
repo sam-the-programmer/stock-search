@@ -7,36 +7,25 @@
   <h1 align="center">Stock Search</h1>
 
   <p align="center">
+    This is not financial advice. Do not use this for real-world circumstances.
+    <br/>
+    <br/>
     Stock Search is the new innovative way to check and view stocks through
     time, back through the past and into the future. By using varied and
-    dynamic machine learning algorithms, future prices and fluctuations can
-    be mapped.
+    dynamic machine learning algorithms, future prices can be predicted.
   </p>
 </p>
 
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
 </details>
 
-<h2>About The Project</h2>
+<br/>
+<hr/>
+
+### **DISCLAIMER:** MUST READ
+### Stock Search does not take any responsibility for anything loss or damage
+### and cannot be made liable for anything that occurs, in fact we actively
+### discourage use for real-world circumstances. By using this application
+### (Stock Search) you are agreeing to this disclaimer. Read the LICENSE for
+### information.
+
+<hr/>
