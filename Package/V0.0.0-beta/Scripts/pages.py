@@ -21,7 +21,7 @@ class MultiPage(object):
             'App Navigation',
             self.pages,
             format_func = lambda page: page['title'],
-            index = 0
+            index = 1
         )
 
         page['function']()
