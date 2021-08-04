@@ -185,7 +185,6 @@ border-radius:10px 10px 10px 10px;
     if right_col.button('Get Predictions'):
         space.info('Training models - please wait, this could take some time...')
         preds, errors, tail = get_best_preds(data, column, num_days)
-        st.write(tail)
     
     
     right_col.write('''
