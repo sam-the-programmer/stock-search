@@ -77,12 +77,12 @@ def title_func(title_name):
     title, logo = st.beta_columns([5, 1])
 
     title.title(title_name)
-    logo.image('Images/logo.png', width=100)
+    logo.image('https://github.com/Password-Classified/Stock-Search/blob/a9b8ebbdebbe681f45e21bdfaef01eb5066ceff1/Package/V0.0.0-beta/Images/logo.png', width=100)
 
 
 # Pages
 def welcome():
-    st.image('Images/logo.png', width=520)
+    st.image('https://github.com/Password-Classified/Stock-Search/blob/a9b8ebbdebbe681f45e21bdfaef01eb5066ceff1/Package/V0.0.0-beta/Images/logo.png', width=520)
     st.write(f'''
 # Stock Search
 
