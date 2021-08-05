@@ -18,7 +18,7 @@ except:
 
 st.set_page_config(
     page_title='Stock Search',
-    page_icon='Images/favicon.png',
+    page_icon='https://github.com/Password-Classified/Stock-Search/blob/master/Package/V0.0.0-beta/Images/logo.png',
     layout='wide')
 
 # Pages
