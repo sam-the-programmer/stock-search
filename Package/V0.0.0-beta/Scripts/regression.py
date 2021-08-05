@@ -221,7 +221,8 @@ The **Error Rating** for the algorithms is not in a specified unit, scale varies
         preds.insert(0, 'Mean', value=preds.mean(axis=1))
         
         graphs.write('### Recommended Model')
-        graphs.line_chart(preds.iloc(axis=1)[lowest_index], height=400)
+        graphs.line_chart(preds['Ridge Regressor'], height=400)
+        # graphs.line_chart(preds.iloc(axis=1)[lowest_index], height=400)
         
         graphs.write('### All Models')
         graphs.line_chart(preds, height=400)
