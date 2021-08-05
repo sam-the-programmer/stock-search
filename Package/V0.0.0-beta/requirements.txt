@@ -4,4 +4,3 @@ yfinance==0.1.63
 quandl==3.6.1
 streamlit==0.84.0
 numpy==1.19.5
-pip==21.2.2
