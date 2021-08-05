@@ -82,6 +82,7 @@ def title_func(title_name):
 
 # Pages
 def welcome():
+    st.markdown('![Logo](https://github.com/Password-Classified/Stock-Search/blob/a9b8ebbdebbe681f45e21bdfaef01eb5066ceff1/Package/V0.0.0-beta/Images/logo.png)')
     st.image('https://github.com/Password-Classified/Stock-Search/blob/a9b8ebbdebbe681f45e21bdfaef01eb5066ceff1/Package/V0.0.0-beta/Images/logo.png', width=520)
     st.write(f'''
 # Stock Search
