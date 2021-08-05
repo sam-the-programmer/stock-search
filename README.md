@@ -46,7 +46,5 @@ view and generate predictions. Here are the main pages.
 
  + Welcome - Welcome to the web app!
  + All Data - Browse and predict from all provided data
- + Companies - View and predict from data on specific companies and organizations' data.
  + Cryptocurrencies - View and predict from cryptocurrency data
  + Exchange Rates - View and predict from exchange rate data
- + Indexes - View and predict from many of the major indexes

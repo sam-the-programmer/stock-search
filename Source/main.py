@@ -18,7 +18,7 @@ except:
 
 st.set_page_config(
     page_title='Stock Search',
-    page_icon='Images/favicon.png',
+    page_icon='https://raw.githubusercontent.com/Password-Classified/Stock-Search/master/Package/V0.0.0-beta/Images/favicon.png',
     layout='wide')
 
 # Pages
@@ -28,6 +28,7 @@ app = MultiPage()
 app.add_page('Welcome', welcome)
 
 app.add_page('All Data', all_data)
+app.add_page('Cryptocurrencies', crypto_data)
 app.add_page('Exchange Rates', exchange_rates_data)
 app.add_page('Settings', settings)
 

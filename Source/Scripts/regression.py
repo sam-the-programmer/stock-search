@@ -123,7 +123,7 @@ def get_best_preds(raw, column, days):
     
     grad_reg.fit(X_train, y_train)
     
-    prediction_frame = pd.DataFrame(index=range(1, days+1))
+    prediction_frame = pd.DataFrame(index=range(1, int(days)+1))
     
     negative = days
     preds = [
@@ -185,7 +185,6 @@ border-radius:10px 10px 10px 10px;
     if right_col.button('Get Predictions'):
         space.info('Training models - please wait, this could take some time...')
         preds, errors, tail = get_best_preds(data, column, num_days)
-        st.write(tail)
     
     
     right_col.write('''
@@ -193,20 +192,18 @@ The **Error Rating** for the algorithms is not in a specified unit, scale varies
 ''')
 
     
-    raw_data_display = st.beta_expander('Raw Prediction Data', expanded=True)
+    raw_data_display = st.beta_expander('Prediction Data', expanded=True)
     stats = st.beta_expander('Model Performance')
     
     
     
     if 'preds' in locals():
-        # algorithms = right_col.multiselect('Choose algorithms:', ['Recommended', 'All', *models], help='Choose which algorithm\'s predictions to display in the graph.')
-        
         table_place = right_col.empty()
         
         lowest_value = np.inf
         lowest_index = 0
         for i in range(len(errors)):
-            if errors[i] > lowest_value:
+            if errors[i] < lowest_value:
                 lowest_value = errors[i]
                 lowest_index = i
         
@@ -215,27 +212,26 @@ The **Error Rating** for the algorithms is not in a specified unit, scale varies
         table_place.table(pd.DataFrame(errors, index=models, columns=['Error Rating']))
         stat_contain = stats.beta_container()
         
+        
+        
         if 'Mean' in preds.columns: preds.pop('Mean')
         if 'Recommended' in preds.columns: preds.pop('Recommended')
         
+        preds.insert(0, 'Recommended', value=preds['Ridge Regressor'])
+        preds.insert(0, 'Mean', value=preds.mean(axis=1))
+        
         graphs.write('### Recommended Model')
-        graphs.line_chart(preds.iloc(axis=1)['Recommended'], height=400)
+        graphs.line_chart(preds['Linear Regressor'], height=400)
+        # graphs.line_chart(preds.iloc(axis=1)[lowest_index], height=400)
         
         graphs.write('### All Models')
         graphs.line_chart(preds, height=400)
-        
-        preds.insert(0, 'Recommended', value=preds.iloc(axis=1)[lowest_index])
-        preds.insert(0, 'Mean', value=preds.mean(axis=1))
+
         raw_data_display.write(preds)
-        stat_contain.write(tail)
         stat_contain.write('Below is a bar chart of the model performance. Lower values means less error and higher accuracy, so look for the algorithms with the lowest values.')
         performance_chart = stat_contain.bar_chart(pd.DataFrame(errors, index=models), height=400)
         
     else:
-        # algorithms = right_col.multiselect('Choose algorithms:', ['Recommended', 'All', *models], help='Choose which algorithm\'s predictions to display in the graph.')
-    
-        # if right_col.button('Update Graph'):
-        #     space.line_chart(pd.DataFrame(np.zeros(shape=1), columns=['No Data Generated Yet']), height=400)
         table_place = right_col.empty()
         raw_data_display.info('No predictions generated yet')
         table_place.table(pd.DataFrame([['Untrained']], index=[models], columns=['Mean Error Rating']))
