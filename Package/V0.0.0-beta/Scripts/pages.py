@@ -53,7 +53,7 @@ footer :after {
 <br/>
 <br/>
 
-> #### DISCLAIMER
+> #### DISCLAIMER: THIS IS JUST A VISUALIZATION OF A DATA SCIENCE PROJECT
 > ##### **UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
 > ##### **The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
 > #### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
@@ -104,7 +104,7 @@ tools will outline estimates for rates in the future.
 
 Please see the disclaimer:
 
-> #### DISCLAIMER
+> #### DISCLAIMER: THIS IS JUST A VISUALIZATION OF A DATA SCIENCE PROJECT
 > ##### **UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
 > ##### **The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
 > #### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
