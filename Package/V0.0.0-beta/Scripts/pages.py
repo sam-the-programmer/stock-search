@@ -21,7 +21,7 @@ class MultiPage(object):
             'App Navigation',
             self.pages,
             format_func = lambda page: page['title'],
-            index = 1
+            index = 0
         )
 
         page['function']()
@@ -53,18 +53,21 @@ footer :after {
 <br/>
 <br/>
 
-### DISCLAIMER
-**UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
-**The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
-#### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
+> ### DISCLAIMER
+> **UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
+> **The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
+> #### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
 
-###### The creator recommends that:
+<br/>
+> ###### The creator recommends that:
 
-> ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
+> > ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
 
+<br/>
 
+#### Check out the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a> on the Github repository for more information.
 
-###### Check out the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a> on the Github repository for more information.
+<br/>
 
 ###### Thanks to Numpy, Pandas, Quandl, Streamlit and Python.
 ''', unsafe_allow_html=True)
@@ -103,10 +106,19 @@ tools will outline estimates for rates in the future.
 
 Please see the disclaimer:
 
-### DISCLAIMER
-**UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
-**The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
-#### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
+> #### DISCLAIMER
+> ##### **UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
+> ##### **The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
+> #### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
+
+###### The creator recommends that:
+
+> > ##### ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
+
+#### Check out the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a> on the Github repository for more information.
+
+<br/>
+<br/>
 
 Use the left hand side sidebar to navigate through the pages. There are currently
 {len(data.datasets)} datasets you can browse and analyse, with more added every update.
