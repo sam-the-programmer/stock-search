@@ -53,12 +53,16 @@ footer :after {
 <br/>
 <br/>
 
-##### Disclaimer
-###### The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.
+### DISCLAIMER
+**UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
+**The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
+#### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
 
 ###### The creator recommends that:
 
 > ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
+
+
 
 ###### Check out the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a> on the Github repository for more information.
 
@@ -94,8 +98,15 @@ def welcome():
 
 Welcome! Stock Search is the latest, innovative way to explore stocks and prices
 throughout time, back into the past and into the future. By using detailed
-machine learning models and deep neural networks, Stock Search's free AI
+machine learning models, Stock Search's free ML
 tools will outline estimates for rates in the future.
+
+Please see the disclaimer:
+
+### DISCLAIMER
+**UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
+**The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
+#### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
 
 Use the left hand side sidebar to navigate through the pages. There are currently
 {len(data.datasets)} datasets you can browse and analyse, with more added every update.
@@ -108,6 +119,10 @@ has never been so easy. Visualize financial data, such as the Apple stocks below
     st.write('''
 Then, you can have access to machine learning algorithms that allow you to
 receive AI\'s predictions of future prices and trends.
+
+These are just ***predictions***, so should not be thought of in any way as accurate,
+future-seeing or anything of the such.
+
 
 <br/>
 <br/>
