@@ -28,6 +28,7 @@ app = MultiPage()
 app.add_page('Welcome', welcome)
 
 app.add_page('All Data', all_data)
+app.add_page('Cryptocurrencies', crypto_data)
 app.add_page('Exchange Rates', exchange_rates_data)
 app.add_page('Settings', settings)
 
