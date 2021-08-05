@@ -53,23 +53,21 @@ footer :after {
 <br/>
 <br/>
 
-> ### DISCLAIMER
-> **UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
-> **The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
+> #### DISCLAIMER
+> ##### **UNDER NO CIRCUMSTANCES SHOULD THE CREATORS, PUBLISHERS OR COPYRIGHT HOLDERS BE MADE LIABLE TO ANY CLAIM, DAMAGE, LOSS OR OTHER LIABLILITY THAT ARISES IN USE OF THE SOFTWARE, IN CONNECTION WITH THE SOFTWARE OR ANY OTHER USE, PURPOSES OR ANY OTHER DEALINGS WITH THE SOFTWARE.**
+> ##### **The creator of Stock Search is by no means a financial expert of any kind; this is just a visualisation of a project. Use this data and predictions at your own risk. The models may not be accurate and have wide error margins. Furthermore, some data may not be accurate to that minute, as the data interval times vary on the dataset.**
 > #### STOCK SEARCH ACTIVELY DISCOURAGES USE OF THIS DATA FOR REAL SITUATIONS.
 
-<br/>
-> ###### The creator recommends that:
+###### The creator recommends that:
 
-> > ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
-
-<br/>
+> > ##### ***Stock Search should not be used for any real financial situations. Any use is at the user's own risk.***
 
 #### Check out the <a href='https://github.com/Password-Classified/Stock-Search/blob/master/LICENSE'>License</a> on the Github repository for more information.
 
+
 <br/>
 
-###### Thanks to Numpy, Pandas, Quandl, Streamlit and Python.
+###### Thanks to Numpy, Pandas, Quandl, Yahoo! Finance, yfinance, Streamlit and Python.
 ''', unsafe_allow_html=True)
 
     # Get your free Quandl API key there too to allow for more frequent download of real time data when using Stock Share. Currently, only a few datasets are
@@ -155,6 +153,8 @@ future-seeing or anything of the such.
 
 def all_data():
     title_func('All Data')
+    st.write('##### **NOTE**: Please read the disclaimer before continuing. This can be found in the footer and the welcome page.')
+    st.text('\n')
 
     left_col, right_col = st.beta_columns([1, 1])
 
