@@ -5,6 +5,8 @@
   </a>
 
   <h1 align="center">Stock Search</h1>
+  
+  <h3>Check out the streamlit sharing app <a href="https://share.streamlit.io/password-classified/stock-search/Package/V0.0.0-beta/main.py">here</a>!</h3>
 
   <p align="center">
     This is not financial advice. Do not use this for real-world circumstances. This is simply a visualization of a data science project.
