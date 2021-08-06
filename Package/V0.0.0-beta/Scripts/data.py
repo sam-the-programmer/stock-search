@@ -2,10 +2,9 @@ import random as rd
 
 import numpy as np
 import yfinance as yf
-from quandl import ApiConfig, get
+from quandl import get
 from streamlit import cache as stcache, write as stwrite
 
-from Scripts.pages import api_key_string
 
 categories = ['Consumer Staples',
               'Exchange Rates',
@@ -109,10 +108,6 @@ for i in datasets:
     elif 'Cryptocurrencies:' in i:
         cryptos = {**cryptos, i.replace('Cryptocurrencies: ', '') : datasets[i]}
 
-ApiConfig.api_key = 'rkHx96Rssa2DWAeMySeY'
-
-# if api_key_string != '' or api_key_string != ' ':
-#     ApiConfig.api_key = api_key_string
 
 
 def monte_carlo(data_name, column_name, iters=100, reps=100):

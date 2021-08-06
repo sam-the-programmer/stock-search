@@ -218,7 +218,6 @@ def crypto_data():
     footer()
 
 
-api_key_string = ''
 
 
 def settings():
@@ -227,12 +226,5 @@ def settings():
 
 There are currently no settings yet. Quandl API keys will be introduced in later updates.
 ''')
-    global api_key_string
-    api_key_string = 0
-    # api_key_string = st.text_input(
-    #     'Quandl API Key',
-    #     type='password',
-    #     help='Choose Quandl API key. Fill this with your API key for more data downloads per timeframe. Without API key, max is 20 downloads per 10 minutes.'
-    # )
 
     footer()
