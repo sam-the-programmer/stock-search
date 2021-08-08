@@ -47,6 +47,6 @@ Stock Search has a variety of pages that allow you to interact,
 view and generate predictions. Here are the main pages.
 
  + Welcome - Welcome to the web app!
- + All Data - Browse and predict from all provided data
+ + All Data - Browse and predict from all provided **data**
  + Cryptocurrencies - View and predict from cryptocurrency data
  + Exchange Rates - View and predict from exchange rate data
