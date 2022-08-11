@@ -3,4 +3,4 @@ pandas==1.2.4
 yfinance==0.1.63
 quandl==3.6.1
 streamlit==1.11.1
-numpy==1.19.5
+numpy==1.22.0
