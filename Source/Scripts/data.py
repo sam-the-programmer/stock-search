@@ -128,14 +128,11 @@ def monte_carlo(data_name, column_name, iters=100, reps=100):
             incr += float((pct_change[i] - pct_change[i+1])/len(pct_change))
         except: break
     stwrite(incr)
-    
-    for i in range(reps):
-        out = []
-        for i in range(iters):
-            out.append(curr + curr*rd.normalvariate(incr, 1))
-            
+
+    for _ in range(reps):
+        out = [curr + curr*rd.normalvariate(incr, 1) for _ in range(iters)]
         all_data.append(out)
-    
+
     return all_data
 
 

@@ -83,12 +83,15 @@ def title_func(title_name):
 # Pages
 def welcome():
     st.image('https://raw.githubusercontent.com/Password-Classified/Stock-Search/master/Package/V0.0.0-beta/Images/logo.png', width=520)
-    st.write(f'''
+    st.write(
+        '''
 # Stock Search
 
 <br/>
-''', unsafe_allow_html=True)
-    
+''',
+        unsafe_allow_html=True,
+    )
+
     # if not st.checkbox('Show Welcome Screen on Startup', value=True):
     #     setting_info.set_welcome_screen(False)
 
@@ -158,8 +161,11 @@ def all_data():
 
     left_col, right_col = st.beta_columns([1, 1])
 
-    data_name = left_col.selectbox('Choose Dataset', [
-                                   key for key in data.datasets], help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.')
+    data_name = left_col.selectbox(
+        'Choose Dataset',
+        list(data.datasets),
+        help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.',
+    )
 
     data_data = data.get_data(data_name)
 
@@ -180,10 +186,13 @@ def exchange_rates_data():
 
     left_col, right_col = st.beta_columns([1, 1])
 
-    data_name = left_col.selectbox('Choose Dataset', [
-                                   key for key in data.exchange_rates], help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.')
+    data_name = left_col.selectbox(
+        'Choose Dataset',
+        list(data.exchange_rates),
+        help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.',
+    )
 
-    data_data = data.get_data('Exchange Rates: ' + data_name)
+    data_data = data.get_data(f'Exchange Rates: {data_name}')
 
     data_type = right_col.selectbox('Data Type', list(
         data_data), help='Choose which column of data to display. E.g. "Value", "High" or "Low"')
@@ -201,10 +210,13 @@ def crypto_data():
 
     left_col, right_col = st.beta_columns([1, 1])
 
-    data_name = left_col.selectbox('Choose Dataset', [
-                                   key for key in data.cryptos], help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.')
+    data_name = left_col.selectbox(
+        'Choose Dataset',
+        list(data.cryptos),
+        help='Choose dataset from a wide variety from Quandl.com and Yahoo! Finance.',
+    )
 
-    data_data = data.get_data('Cryptocurrencies: ' + data_name)
+    data_data = data.get_data(f'Cryptocurrencies: {data_name}')
 
     data_type = right_col.selectbox('Data Type', list(
         data_data), help='Choose which column of data to display. E.g. "Value", "High" or "Low"')

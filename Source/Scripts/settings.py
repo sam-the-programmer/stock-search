@@ -5,9 +5,8 @@ import os
 def get_new() -> bool:
     if not os.path.isdir(r'C:\ProgramData\Stock Search'):
         return True
-    else:
-        os.makedirs(os.path.dirname('C:\ProgramData\Stock Search'))
-        return False
+    os.makedirs(os.path.dirname('C:\ProgramData\Stock Search'))
+    return False
 
 def get_welcome_screen() -> bool:
     with open(r'C:\ProgramData\Stock Search\app_data.json') as file:
