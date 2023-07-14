@@ -14,19 +14,20 @@ from sklearn.tree import DecisionTreeRegressor, ExtraTreeRegressor
 
 
 def preprocess_data(data: pd.DataFrame, column: str, shifts: int, valid_split=0.2):
-    to_shift = []
-    for i in range(shifts):
-        to_shift.append(data[column].shift(-i-1).values)
-    
+    to_shift = [data[column].shift(-i-1).values for i in range(shifts)]
     raw_x = pd.DataFrame([list(a) for a in zip(*to_shift)], index=data.index).dropna()
 
     X_train = raw_x.iloc[: len(raw_x)-int(len(raw_x)*valid_split)]
     X_valid = raw_x.iloc[len(raw_x)-int(len(raw_x)*valid_split) :]
     y_train = data[column].iloc[: len(raw_x)-int(len(raw_x)*valid_split)]
-    diff = len(data[column].iloc[len(raw_x)-int(len(raw_x)*valid_split) :-int(shifts/2)]) - len(X_valid)
-    
+    diff = len(
+        data[column].iloc[
+            len(raw_x) - int(len(raw_x) * valid_split) : -(shifts // 2)
+        ]
+    ) - len(X_valid)
+
     y_valid = data[column].iloc[len(raw_x)-int(len(raw_x)*valid_split) :-int(shifts/2 + diff)]
-    
+
     try:
         assert len(X_train) == len(y_train)
         assert len(X_valid) == len(y_valid)
@@ -38,14 +39,11 @@ def preprocess_data(data: pd.DataFrame, column: str, shifts: int, valid_split=0.
         print(f'y valid {len(y_valid)}')
         print('                       ')
         exit()
-    
+
     return X_train.astype(np.float), X_valid.astype(np.float), y_train.astype(np.float), y_valid.astype(np.float)
 
 def shift_data(data: pd.DataFrame, column: str, shifts:int):
-    to_shift = []
-    for i in range(shifts):
-        to_shift.append(data[column].shift(-i-1).values)
-    
+    to_shift = [data[column].shift(-i-1).values for i in range(shifts)]
     return pd.DataFrame([list(a) for a in zip(*to_shift)], index=data.index).dropna()
 
 @st.cache(show_spinner=False, allow_output_mutation=True)
@@ -58,24 +56,24 @@ def get_best_preds(raw, column, days):
     extr_tree = ExtraTreeRegressor(random_state=1)
     rand_tree = RandomForestRegressor(random_state=1)
     grad_reg = GradientBoostingRegressor(random_state=1)
-    
-    
+
+
     X_train, X_valid, y_train, y_valid = preprocess_data(raw, column, days)
-    
+
     ada_reg.fit(X_train, y_train)
-    
+
     lin_reg.fit(X_train, y_train)
-    
+
     rid_reg.fit(X_train, y_train)
-    
+
     dec_tree.fit(X_train, y_train)
-    
+
     extr_tree.fit(X_train, y_train)
-    
+
     rand_tree.fit(X_train, y_train)
-    
+
     grad_reg.fit(X_train, y_train)
-    
+
     int_preds = [
         ada_reg.predict(X_valid),
         lin_reg.predict(X_valid),
@@ -85,13 +83,12 @@ def get_best_preds(raw, column, days):
         rand_tree.predict(X_valid),
         grad_reg.predict(X_valid)
     ]
-    
+
     preds = []
     for i in int_preds:
         df = pd.DataFrame(i, index=y_valid.index)
         preds.append(df.shift(1, fill_value=np.nan).dropna())
-        
-    errors = []
+
     models = [
         'Adaboost Regressor',
         'Linear Regressor',
@@ -101,30 +98,28 @@ def get_best_preds(raw, column, days):
         'Random Forest Regressor',
         'Gradient Boosting Regressor'
     ]
-    
-    
-    for i in range(len(preds)):
-        errors.append(round(mean_absolute_error(y_valid[1:], preds[i]), 2))
-    
+
+
+    errors = [round(mean_absolute_error(y_valid[1:], pred), 2) for pred in preds]
     X_train = shift_data(raw, column, days)
     y_train = pd.DataFrame(raw[column], index=X_train.index)
 
     ada_reg.fit(X_train, y_train)
-    
+
     lin_reg.fit(X_train, y_train)
-    
+
     rid_reg.fit(X_train, y_train)
-    
+
     dec_tree.fit(X_train, y_train)
-    
+
     extr_tree.fit(X_train, y_train)
-    
+
     rand_tree.fit(X_train, y_train)
-    
+
     grad_reg.fit(X_train, y_train)
-    
+
     prediction_frame = pd.DataFrame(index=range(1, int(days)+1))
-    
+
     negative = days
     preds = [
         ada_reg.predict(X_train.iloc[-negative:]),
@@ -135,10 +130,10 @@ def get_best_preds(raw, column, days):
         rand_tree.predict(X_train.iloc[-negative:]),
         grad_reg.predict(X_train.iloc[-negative:])
         ]
-    
+
     for i in range(len(preds)):
         prediction_frame[models[i]] = preds[i]
-    
+
     return prediction_frame, errors, X_train
     
 
